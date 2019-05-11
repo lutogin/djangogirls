@@ -25,7 +25,10 @@ SECRET_KEY = 'ky2gmtjq)rfa+=_!)#^)py6%*ydy+o^wux2f(m_-mvkok82h8h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'lutogin.pythonanywhere.com',
+     '127.0.0.1',
+]
 
 
 # Application definition
@@ -52,10 +55,12 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'app.urls'
 
+TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMPLATES_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
